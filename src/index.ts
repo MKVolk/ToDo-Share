@@ -2,6 +2,7 @@ import express from 'express'
 
 const app = express();
 app.use(express.json());
+const PORT = 3000;
 
 //list of todo lists
 interface TodoListItem {
@@ -241,6 +242,6 @@ app.delete('/todo/:list_id/item/:itemId', (req,res) => {
 
 
 //App Listen 
-app.listen(3000, () =>{
-    console.log('listening port 3000');
+app.listen(PORT, () =>{
+    console.log(`Listening on port ${PORT}`);
 });
