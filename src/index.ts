@@ -110,18 +110,6 @@ app.delete('/todo/:list_id', (req,res) => {
         .json({ status: 200, message: "Todo list deleted" }); //Same change to code 200
 });
 
-/*Todo List Items
--GET /todo/:list_id/items - Retrieve all items in a list
-    Responses: Code 200 List of todo items, Code 404 Todo list not found
--POST /todo/:list_id/item - Create a new item in a list
-    Responses: Code 201, Code 400 task is required, Code 404 Todo list not found
--GET /todo/:list_id/item/:itemId - Retrieve a specific item
-    Responses: Code 200 Todo list item retrieved, Code 404 Todo list item not found
--PATCH /todo/:list_id/item/:itemId - Update a specific item
-    Responses: Code 204 Todo list item updated, Code 400 Bad request, Code 404 Todo list item not found
--DELETE /todo/:list_id/item/:itemId - Delete a specific item
-    Responses: Code 204 Todo list item deleted, code 404 Todo list item not found
-*/
 
 /*GET /todo/:list_id/items - Retrieve all items in a list
     Responses: Code 200 List of todo items, Code 404 Todo list not found*/
@@ -252,7 +240,7 @@ app.delete('/todo/:list_id/item/:itemId', (req,res) => {
 });
 
 
-//App Listen :3
+//App Listen 
 app.listen(3000, () =>{
     console.log('listening port 3000');
 });
