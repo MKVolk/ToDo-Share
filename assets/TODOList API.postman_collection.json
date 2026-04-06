@@ -1,0 +1,1405 @@
+{
+	"info": {
+		"_postman_id": "fc9fc764-4d1e-4116-a44e-002d285bfc84",
+		"name": "TODO List API",
+		"description": "A simple TODO List API, privdes the ability to create, read, delte and update TODO Lists and their related items / tasks.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19754840"
+	},
+	"item": [
+		{
+			"name": "todo",
+			"item": [
+				{
+					"name": "{list_id}",
+					"item": [
+						{
+							"name": "items",
+							"item": [
+								{
+									"name": "Retrieve a list of todo items",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id",
+												"items"
+											],
+											"variable": [
+												{
+													"key": "list_id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieve a list of todo items"
+									},
+									"response": [
+										{
+											"name": "List of todo items",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/items",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"items"
+													],
+													"variable": [
+														{
+															"key": "list_id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<number>\",\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}"
+										},
+										{
+											"name": "Todo list not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/items",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"items"
+													],
+													"variable": [
+														{
+															"key": "list_id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "item",
+							"item": [
+								{
+									"name": "{itemId}",
+									"item": [
+										{
+											"name": "Retrieve a todo list item",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "list_id",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "itemId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Retrieve a todo list item"
+											},
+											"response": [
+												{
+													"name": "Todo list item retrieved",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<number>\",\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}"
+												},
+												{
+													"name": "Todo list item not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Update a todo list item",
+											"request": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "list_id",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "itemId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Update a todo list item"
+											},
+											"response": [
+												{
+													"name": "Todo list item updated",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+												},
+												{
+													"name": "Todo list item not found",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Delete a todo list item",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "list_id",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "itemId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Delete a todo list item"
+											},
+											"response": [
+												{
+													"name": "Todo list item deleted",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+												},
+												{
+													"name": "Todo list item not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/todo/:list_id/item/:itemId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"todo",
+																":list_id",
+																"item",
+																":itemId"
+															],
+															"variable": [
+																{
+																	"key": "list_id"
+																},
+																{
+																	"key": "itemId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Create a todo list item",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id/item",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id",
+												"item"
+											],
+											"variable": [
+												{
+													"key": "list_id",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Create a todo list item"
+									},
+									"response": [
+										{
+											"name": "Todo list item created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item"
+													],
+													"variable": [
+														{
+															"key": "list_id"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<number>\",\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}"
+										},
+										{
+											"name": "Task is required",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item"
+													],
+													"variable": [
+														{
+															"key": "list_id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"name": "Todo list not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"task\": \"<string>\",\n  \"completed\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/todo/:list_id/item",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"todo",
+														":list_id",
+														"item"
+													],
+													"variable": [
+														{
+															"key": "list_id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve a list of todo lists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/todo/:list_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										":list_id"
+									],
+									"variable": [
+										{
+											"key": "list_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Retrieve a list of todo lists"
+							},
+							"response": [
+								{
+									"name": "Todo list retrieved",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"created_at\": {},\n  \"list_items\": [\n    {\n      \"id\": \"<number>\",\n      \"task\": \"<string>\",\n      \"completed\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    },\n    {\n      \"id\": \"<number>\",\n      \"task\": \"<string>\",\n      \"completed\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Todo list not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a todo list",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/todo/:list_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										":list_id"
+									],
+									"variable": [
+										{
+											"key": "list_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Update a todo list"
+							},
+							"response": [
+								{
+									"name": "Todo list updated",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Title is required",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Todo list not found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a todo list",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/todo/:list_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										":list_id"
+									],
+									"variable": [
+										{
+											"key": "list_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Delete a todo list"
+							},
+							"response": [
+								{
+									"name": "Todo list deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Todo list not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todo/:list_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todo",
+												":list_id"
+											],
+											"variable": [
+												{
+													"key": "list_id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve a list of todo lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/todo/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"todo",
+								""
+							]
+						},
+						"description": "Retrieve a list of todo lists"
+					},
+					"response": [
+						{
+							"name": "List of todo lists",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/todo/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<number>\",\n    \"title\": \"<string>\",\n    \"created_at\": {},\n    \"list_items\": [\n      {\n        \"id\": \"<number>\",\n        \"task\": \"<string>\",\n        \"completed\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"updated_at\": \"<string>\"\n      },\n      {\n        \"id\": \"<number>\",\n        \"task\": \"<string>\",\n        \"completed\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"updated_at\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<number>\",\n    \"title\": \"<string>\",\n    \"created_at\": {},\n    \"list_items\": [\n      {\n        \"id\": \"<number>\",\n        \"task\": \"<string>\",\n        \"completed\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"updated_at\": \"<string>\"\n      },\n      {\n        \"id\": \"<number>\",\n        \"task\": \"<string>\",\n        \"completed\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"updated_at\": \"<string>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a todo list",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/todo/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"todo",
+								""
+							]
+						},
+						"description": "Create a todo list"
+					},
+					"response": [
+						{
+							"name": "Todo list created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/todo/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"created_at\": {},\n  \"list_items\": [\n    {\n      \"id\": \"<number>\",\n      \"task\": \"<string>\",\n      \"completed\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    },\n    {\n      \"id\": \"<number>\",\n      \"task\": \"<string>\",\n      \"completed\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Title is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/todo/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todo",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<number>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

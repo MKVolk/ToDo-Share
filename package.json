@@ -1,0 +1,27 @@
+{
+  "name": "assignment-2-todo-backend-mkvolk",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/FjCiuoQ9)\r [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22679584)\r # Assignment 2 - TODO List API",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COP4854-13114/assignment-2-todo-backend-MKVolk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COP4854-13114/assignment-2-todo-backend-MKVolk/issues"
+  },
+  "homepage": "https://github.com/COP4854-13114/assignment-2-todo-backend-MKVolk#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
